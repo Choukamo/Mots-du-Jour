@@ -1,0 +1,4 @@
+project_id = "mots-du-jour"
+
+[functions.tick]
+verify_jwt = false
