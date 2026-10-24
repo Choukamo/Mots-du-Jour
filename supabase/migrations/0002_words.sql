@@ -1,5 +1,5 @@
 -- Généré depuis words.json (ne pas éditer à la main)
-insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
+insert into mdj.words (id, fr, zh, pinyin, en, kind, theme) values
 ('61998da673','le pain','面包','miàn bāo','bread','word','nourriture'),
 ('8992e8773b','le riz','米饭','mǐ fàn','rice','word','nourriture'),
 ('211dc34550','les nouilles','面条','miàn tiáo','noodles','word','nourriture'),
@@ -201,7 +201,7 @@ insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
 ('8b8f1c182b','ouvrir','开','kāi','to open','word','maison'),
 ('1d87857c6e','fermer','关','guān','to close','word','maison')
 on conflict (id) do update set fr=excluded.fr, zh=excluded.zh, pinyin=excluded.pinyin, en=excluded.en, kind=excluded.kind, theme=excluded.theme;
-insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
+insert into mdj.words (id, fr, zh, pinyin, en, kind, theme) values
 ('ce40c1aa74','à la maison','在家','zài jiā','at home','phrase','maison'),
 ('a161f1d8ab','je rentre à la maison','我回家了','wǒ huí jiā le','I''m going home','phrase','maison'),
 ('e138c5aae4','le corps','身体','shēn tǐ','body','word','corps'),
@@ -403,7 +403,7 @@ insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
 ('baf328ce17','je suis fier de toi','我为你骄傲','wǒ wèi nǐ jiāo ào','I''m proud of you','phrase','famille'),
 ('0cc6766b6c','l''animal','动物','dòng wù','animal','word','animaux_nature')
 on conflict (id) do update set fr=excluded.fr, zh=excluded.zh, pinyin=excluded.pinyin, en=excluded.en, kind=excluded.kind, theme=excluded.theme;
-insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
+insert into mdj.words (id, fr, zh, pinyin, en, kind, theme) values
 ('e6c349d65b','l''oiseau','鸟','niǎo','bird','word','animaux_nature'),
 ('351c130d6d','le cheval','马','mǎ','horse','word','animaux_nature'),
 ('7e65bda909','la vache','牛','niú','cow','word','animaux_nature'),
@@ -605,7 +605,7 @@ insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
 ('9e79a049bf','zéro','零','líng','zero','word','nombres_temps'),
 ('2c5496ef39','un','一','yī','one','word','nombres_temps')
 on conflict (id) do update set fr=excluded.fr, zh=excluded.zh, pinyin=excluded.pinyin, en=excluded.en, kind=excluded.kind, theme=excluded.theme;
-insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
+insert into mdj.words (id, fr, zh, pinyin, en, kind, theme) values
 ('7b88dc6e5b','deux','二','èr','two','word','nombres_temps'),
 ('756598a6b4','trois','三','sān','three','word','nombres_temps'),
 ('72cd4066b0','quatre','四','sì','four','word','nombres_temps'),
@@ -807,7 +807,7 @@ insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
 ('d2e808d6d5','le métro','地铁','dì tiě','subway','word','transport_voyage'),
 ('85680fcbd3','le train','火车','huǒ chē','train','word','transport_voyage')
 on conflict (id) do update set fr=excluded.fr, zh=excluded.zh, pinyin=excluded.pinyin, en=excluded.en, kind=excluded.kind, theme=excluded.theme;
-insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
+insert into mdj.words (id, fr, zh, pinyin, en, kind, theme) values
 ('96a924f4f8','le TGV','高铁','gāo tiě','high-speed train','word','transport_voyage'),
 ('a338edfea7','l''avion','飞机','fēi jī','plane','word','transport_voyage'),
 ('a0bda1269b','le bateau','船','chuán','boat','word','transport_voyage'),
@@ -1009,7 +1009,7 @@ insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
 ('a741b82c26','regarder','看','kàn','to look, to watch','word','verbes_1'),
 ('06da21ba40','savoir','知道','zhī dào','to know (a fact)','word','verbes_1')
 on conflict (id) do update set fr=excluded.fr, zh=excluded.zh, pinyin=excluded.pinyin, en=excluded.en, kind=excluded.kind, theme=excluded.theme;
-insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
+insert into mdj.words (id, fr, zh, pinyin, en, kind, theme) values
 ('1f99dc93d6','connaître','认识','rèn shí','to know (someone)','word','verbes_1'),
 ('376a469a25','pouvoir','能','néng','can, to be able','word','verbes_1'),
 ('f9c5400be9','vouloir','想要','xiǎng yào','to want','word','verbes_1'),
@@ -1211,7 +1211,7 @@ insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
 ('041adb8818','mou','软','ruǎn','soft','word','adjectifs'),
 ('763e92a802','facile','容易','róng yì','easy','word','adjectifs')
 on conflict (id) do update set fr=excluded.fr, zh=excluded.zh, pinyin=excluded.pinyin, en=excluded.en, kind=excluded.kind, theme=excluded.theme;
-insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
+insert into mdj.words (id, fr, zh, pinyin, en, kind, theme) values
 ('bd2155d5f8','difficile','难','nán','difficult','word','adjectifs'),
 ('56b9b1bc09','simple','简单','jiǎn dān','simple','word','adjectifs'),
 ('8b2ae6af92','compliqué','复杂','fù zá','complicated','word','adjectifs'),
@@ -1413,7 +1413,7 @@ insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
 ('07da7c6f3f','c''est combien ?','多少钱？','duō shǎo qián ？','how much is it?','phrase','phrases_quotidien'),
 ('c648a96185','tu fais quoi ?','你在干嘛？','nǐ zài gàn má ？','what are you doing?','phrase','phrases_quotidien')
 on conflict (id) do update set fr=excluded.fr, zh=excluded.zh, pinyin=excluded.pinyin, en=excluded.en, kind=excluded.kind, theme=excluded.theme;
-insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
+insert into mdj.words (id, fr, zh, pinyin, en, kind, theme) values
 ('5429b551e4','tu es où ?','你在哪里？','nǐ zài nǎ lǐ ？','where are you?','phrase','phrases_quotidien'),
 ('8816e439f0','tu as mangé ?','你吃了吗？','nǐ chī le ma ？','have you eaten?','phrase','phrases_quotidien'),
 ('43fdd0f03b','je mange','我在吃饭','wǒ zài chī fàn','I''m eating','phrase','phrases_quotidien'),
@@ -1615,7 +1615,7 @@ insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
 ('e1fffb6749','le yuan','元','yuán','yuan','word','argent_courses'),
 ('34e61067d9','le prix','价格','jià gé','price','word','argent_courses')
 on conflict (id) do update set fr=excluded.fr, zh=excluded.zh, pinyin=excluded.pinyin, en=excluded.en, kind=excluded.kind, theme=excluded.theme;
-insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
+insert into mdj.words (id, fr, zh, pinyin, en, kind, theme) values
 ('614c7d7061','la réduction','打折','dǎ zhé','discount','word','argent_courses'),
 ('88d623cdcb','les soldes','大减价','dà jiǎn jià','sales','word','argent_courses'),
 ('4b537f4b5d','la promotion','促销','cù xiāo','promotion','word','argent_courses'),
@@ -1817,7 +1817,7 @@ insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
 ('941bf27d82','tous les soirs','每天晚上','měi tiān wǎn shàng','every evening','word','amour_extra'),
 ('d8cd65ed75','de temps en temps','偶尔','ǒu ěr','from time to time','word','amour_extra')
 on conflict (id) do update set fr=excluded.fr, zh=excluded.zh, pinyin=excluded.pinyin, en=excluded.en, kind=excluded.kind, theme=excluded.theme;
-insert into public.words (id, fr, zh, pinyin, en, kind, theme) values
+insert into mdj.words (id, fr, zh, pinyin, en, kind, theme) values
 ('24abfb9006','tout à l''heure','刚才','gāng cái','a moment ago','word','amour_extra'),
 ('5c5da22e4a','hier soir','昨晚','zuó wǎn','last night','word','amour_extra'),
 ('df7dfcbd35','ce matin','今天早上','jīn tiān zǎo shàng','this morning','word','amour_extra'),

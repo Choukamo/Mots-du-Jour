@@ -12,7 +12,7 @@ const VAPID_SUBJECT = Deno.env.get("VAPID_SUBJECT") ?? "mailto:admin@example.com
 const CRON_SECRET = Deno.env.get("CRON_SECRET") ?? "";
 
 webpush.setVapidDetails(VAPID_SUBJECT, VAPID_PUBLIC, VAPID_PRIVATE);
-const admin = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false } });
+const admin = createClient(SUPABASE_URL, SERVICE_KEY, { auth: { persistSession: false }, db: { schema: "mdj" } });
 
 type Person = { id: string; name: string; learns: "fr" | "zh"; lang: "fr" | "zh"; tz: string; deliver_hour: number; remind_hour: number };
 type Round = { id: string; learner: string; deliver_at: string; proposals: string[]; chosen: string | null; chosen_by: string | null; delivered_at: string | null; reminded_at: string | null };

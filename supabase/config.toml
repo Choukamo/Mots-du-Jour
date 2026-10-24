@@ -1,4 +1,4 @@
-project_id = "mots-du-jour"
+project_id = "lfvavsargihoyeleizjo"
 
-[functions.tick]
+[functions.mdj-tick]
 verify_jwt = false
