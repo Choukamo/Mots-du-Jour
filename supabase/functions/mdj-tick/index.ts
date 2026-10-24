@@ -1,5 +1,5 @@
 // Fonction serveur appelée toutes les 5 min par pg_cron (header x-cron-secret).
-// 1) livre les mots arrivés à échéance (8h chez l'apprenant) et notifie l'apprenant ;
+// 1) livre les mots arrivés à échéance (6h chez l'apprenant) et notifie l'apprenant ;
 // 2) rappelle à 20h (heure locale) à celui qui n'a pas encore choisi.
 import { createClient } from "npm:@supabase/supabase-js@2";
 import webpush from "npm:web-push@3.6.7";

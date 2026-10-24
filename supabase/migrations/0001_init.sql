@@ -12,7 +12,7 @@ create table if not exists mdj.people (
   learns text not null check (learns in ('fr','zh')),
   lang text not null default 'fr' check (lang in ('fr','zh')),
   tz text not null,
-  deliver_hour int not null default 8,
+  deliver_hour int not null default 6,
   remind_hour int not null default 20
 );
 insert into mdj.people (id, name, learns, lang, tz) values
@@ -40,7 +40,7 @@ create table if not exists mdj.words (
   theme text not null
 );
 
--- Une "manche" = un mot livré à un apprenant à deliver_at (8h chez lui), choisi par l'autre avant.
+-- Une "manche" = un mot livré à un apprenant à deliver_at (6h chez lui), choisi par l'autre avant.
 create table if not exists mdj.rounds (
   id uuid primary key default gen_random_uuid(),
   learner text not null references mdj.people(id),
