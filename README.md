@@ -3,7 +3,7 @@
 Petite appli privée pour Matis et Stella : chaque jour, chacun choisit le mot que l'autre apprendra demain.
 
 - Matis voit 3 mots français et en choisit un pour Stella ; Stella voit 3 mots chinois et en choisit un pour Matis.
-- Le mot arrive le lendemain matin (8h heure locale) avec une notification, puis un rappel à 20h si l'autre n'a pas encore choisi.
+- Le mot arrive le lendemain matin (6h heure locale) avec une notification, puis un rappel à 20h si l'autre n'a pas encore choisi.
 - Si personne ne choisit, l'appli tire un des 3 mots au hasard. Un mot envoyé ne revient jamais.
 - « Autres propositions » : une seule fois par jour.
 
