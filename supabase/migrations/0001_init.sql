@@ -313,6 +313,7 @@ begin
   return;
 end $$;
 revoke execute on function mdj.deliver_due() from public, anon, authenticated;
+grant execute on function mdj.deliver_due() to service_role;
 
 -- Droits sur les tables (les règles RLS ci-dessus limitent ce que chacun voit)
 grant all on all tables in schema mdj to service_role;

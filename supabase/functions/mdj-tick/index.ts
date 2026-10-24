@@ -64,6 +64,15 @@ Deno.serve(async (req) => {
   if (!CRON_SECRET || req.headers.get("x-cron-secret") !== CRON_SECRET) {
     return new Response(JSON.stringify({ error: "forbidden" }), { status: 403, headers: { "Content-Type": "application/json" } });
   }
+  try {
+    return await run();
+  } catch (e) {
+    console.error("tick failed", e);
+    return new Response(JSON.stringify({ error: String((e as Error).message ?? e), details: e }), { status: 500, headers: { "Content-Type": "application/json" } });
+  }
+});
+
+async function run(): Promise<Response> {
   const now = new Date();
   const summary: string[] = [];
   const { data: peopleData, error: pe } = await admin.from("people").select("*");
@@ -106,4 +115,4 @@ Deno.serve(async (req) => {
   }
 
   return new Response(JSON.stringify({ ok: true, summary }), { headers: { "Content-Type": "application/json" } });
-});
+}
