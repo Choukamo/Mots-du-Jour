@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Sun, BookOpen, Settings as SettingsIcon } from 'lucide-react'
+import { Sun, BookOpen, Layers, Settings as SettingsIcon } from 'lucide-react'
 import type { Lang, PersonId, State } from './lib/types'
 import { makeT } from './lib/i18n'
 import { supabase, ensureSession } from './lib/supabase'
@@ -8,8 +8,9 @@ import { Onboarding } from './screens/Onboarding'
 import { Home } from './screens/Home'
 import { History } from './screens/History'
 import { Settings } from './screens/Settings'
+import { Review } from './screens/Review'
 
-type Tab = 'home' | 'history' | 'settings'
+type Tab = 'home' | 'review' | 'history' | 'settings'
 
 export default function App() {
   const [lang, setLang] = useState<Lang | null>(() => store.getLang())
@@ -17,6 +18,11 @@ export default function App() {
   const [state, setState] = useState<State | null>(null)
   const [err, setErr] = useState<string | null>(null)
   const [tab, setTab] = useState<Tab>('home')
+  const [dueCount, setDueCount] = useState(0)
+  useEffect(() => {
+    if (!state) return
+    supabase.rpc('review_due_count').then(({ data }) => { if (typeof data === 'number') setDueCount(data) })
+  }, [state])
 
   const refresh = useCallback(async () => {
     try {
@@ -67,11 +73,13 @@ export default function App() {
       {err === 'offline' && <div className="offline-banner">{t('offline')}</div>}
       <main>
         {tab === 'home' && <Home state={state} lang={lang!} onState={setState} />}
+        {tab === 'review' && <Review state={state} lang={lang!} onCount={setDueCount} />}
         {tab === 'history' && <History state={state} lang={lang!} />}
         {tab === 'settings' && <Settings state={state} lang={lang!} onLang={chooseLang} onLogout={logout} />}
       </main>
       <nav className="tabbar">
         <button className={tab === 'home' ? 'on' : ''} onClick={() => setTab('home')}><Sun size={22} /><span>{t('home')}</span></button>
+        <button className={tab === 'review' ? 'on' : ''} onClick={() => setTab('review')}><span className="tab-icon"><Layers size={22} />{dueCount > 0 && <i className="badge">{dueCount}</i>}</span><span>{t('review')}</span></button>
         <button className={tab === 'history' ? 'on' : ''} onClick={() => setTab('history')}><BookOpen size={22} /><span>{t('history')}</span></button>
         <button className={tab === 'settings' ? 'on' : ''} onClick={() => setTab('settings')}><SettingsIcon size={22} /><span>{t('settings')}</span></button>
       </nav>

@@ -82,3 +82,25 @@ main { flex: 1; padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
 .ruby > span > small { font-size: 12px; font-weight: 400; color: var(--zh); margin-top: 3px; white-space: nowrap; }
 .wordcard.big .ruby > span > small { font-size: 16px; }
 .word-trans.ruby > span > small { font-size: 11px; }
+
+.review-head { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.flashcard { width: 100%; min-height: 260px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; cursor: pointer; font: inherit; color: inherit; }
+.flashcard:disabled { cursor: default; opacity: 1; }
+.flash-main { font-size: 40px; font-weight: 700; line-height: 1.2; overflow-wrap: anywhere; }
+.flash-main.ruby, .flash-trans.ruby { justify-content: center; }
+.flash-main.ruby > span > small { font-size: 16px; }
+.flash-trans { font-size: 22px; color: var(--ink); }
+.flash-trans.ruby > span > small { font-size: 12px; }
+.center { display: flex; justify-content: center; margin: 14px 0; }
+.big-sound { width: auto; height: 52px; padding: 0 20px; font-weight: 600; font-size: 16px; }
+.grades { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.grade { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px 6px; font-weight: 700; }
+.grade small { font-weight: 400; font-size: 12px; color: var(--muted); }
+.grade.again { border-color: var(--accent); color: var(--accent); }
+.grade.good { border-color: var(--ok); color: var(--ok); }
+.grade.easy { border-color: var(--zh); color: var(--zh); }
+.review-end { text-align: center; }
+.review-end h2 { margin: 6px 0 10px; font-size: 22px; }
+.review-end .how { text-align: left; margin-top: 16px; }
+.tab-icon { position: relative; display: inline-flex; }
+.badge { position: absolute; top: -6px; right: -12px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; font-style: normal; display: flex; align-items: center; justify-content: center; }
