@@ -1,11 +1,13 @@
 import type { Lang, PersonId } from './types'
 
-const K = { lang: 'mdj-lang', person: 'mdj-person' }
+const K = { lang: 'mdj-lang', person: 'mdj-person', pinyin: 'mdj-pinyin' }
 
 export const store = {
   getLang(): Lang | null { return (localStorage.getItem(K.lang) as Lang | null) },
   setLang(l: Lang) { localStorage.setItem(K.lang, l) },
   getPerson(): PersonId | null { return localStorage.getItem(K.person) as PersonId | null },
+  getShowPinyin(): boolean { return localStorage.getItem(K.pinyin) === '1' },
+  setShowPinyin(v: boolean) { localStorage.setItem(K.pinyin, v ? '1' : '0') },
   setPerson(p: PersonId | null) { if (p) localStorage.setItem(K.person, p); else localStorage.removeItem(K.person) },
 }
 

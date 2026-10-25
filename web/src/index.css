@@ -71,3 +71,14 @@ main { flex: 1; padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
 .tabbar button { flex: 1; border: none; background: none; display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 11px; color: var(--muted); padding: 6px 0; }
 .tabbar button.on { color: var(--accent); }
 .offline-banner { position: sticky; top: 0; background: #fff3cd; color: #6b5300; text-align: center; padding: 8px; font-size: 13px; z-index: 5; }
+
+.card-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.card-head .card-title { margin: 0; }
+.toolbar { display: flex; justify-content: flex-end; margin: 4px 0 10px; }
+.toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--muted); cursor: pointer; user-select: none; }
+.toggle input { width: 18px; height: 18px; accent-color: var(--accent); margin: 0; }
+.ruby { display: flex; flex-wrap: wrap; gap: 2px 10px; }
+.ruby > span { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.1; }
+.ruby > span > small { font-size: 12px; font-weight: 400; color: var(--zh); margin-top: 3px; white-space: nowrap; }
+.wordcard.big .ruby > span > small { font-size: 16px; }
+.word-trans.ruby > span > small { font-size: 11px; }

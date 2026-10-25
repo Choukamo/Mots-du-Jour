@@ -4,7 +4,8 @@ import type { Lang, State, Word } from '../lib/types'
 import { makeT, fmtDate } from '../lib/i18n'
 import { WordCard } from '../components/WordCard'
 import { supabase } from '../lib/supabase'
-import { friendly } from '../lib/store'
+import { friendly, store } from '../lib/store'
+import { PinyinToggle } from '../components/PinyinToggle'
 
 function localHour(iso: string, tz: string) {
   return Number(new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: 'numeric', hour12: false }).format(new Date(iso))) % 24
@@ -14,6 +15,8 @@ export function Home({ state, lang, onState }: { state: State; lang: Lang; onSta
   const t = makeT(lang)
   const [busy, setBusy] = useState<string | null>(null)
   const [err, setErr] = useState<string | null>(null)
+  const [showPinyin, setShowPinyin] = useState(store.getShowPinyin())
+  function togglePinyin(v: boolean) { store.setShowPinyin(v); setShowPinyin(v) }
   const { me, partner, today, to_choose } = state
   const partnerLearn = partner.learns
   const deliverHourMe = me.deliver_hour
@@ -38,11 +41,14 @@ export function Home({ state, lang, onState }: { state: State; lang: Lang; onSta
   return (
     <div className="screen">
       <section className="card today">
-        <h2 className="card-title">{t('todayTitle')}</h2>
+        <div className="card-head">
+          <h2 className="card-title">{t('todayTitle')}</h2>
+          {me.learns === 'zh' && today && <PinyinToggle on={showPinyin} onChange={togglePinyin} lang={lang} />}
+        </div>
         {today ? (
           <>
             <div className="muted small">{fmtDate(today.deliver_at, lang, me.tz)}</div>
-            <WordCard word={today.word} learn={me.learns} uiLang={lang} big />
+            <WordCard word={today.word} learn={me.learns} uiLang={lang} big showPinyin={showPinyin} />
             <div className="muted small">{today.chosen_by === 'auto' ? t('chosenAuto') : t('chosenBy', { name: partner.name })} · {t('nextWord', { hour: deliverHourMe })}</div>
           </>
         ) : (
