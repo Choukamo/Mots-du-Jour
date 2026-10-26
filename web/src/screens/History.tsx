@@ -33,7 +33,7 @@ export function History({ state, lang }: { state: State; lang: Lang }) {
           {list.map((i) => (
             <div key={i.round_id} className="card compact">
               <div className="muted small">{fmtDate(i.deliver_at, lang, state.me.tz)}</div>
-              <WordCard word={i.word} learn={learn} uiLang={lang} showPinyin={showPinyin} />
+              <WordCard word={i.word} learn={learn} uiLang={lang} showPinyin={showPinyin} audioLang={state.me.learns} />
             </div>
           ))}
         </div>

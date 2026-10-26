@@ -29,7 +29,7 @@ function Chinese({ word, showPinyin, className }: { word: Word; showPinyin: bool
 }
 
 /** Affiche un mot dans la langue apprise (`learn`) avec sa traduction dans l'autre langue. */
-export function WordCard({ word, learn, uiLang, big = false, showPinyin = false }: { word: Word; learn: Lang; uiLang: Lang; big?: boolean; showPinyin?: boolean }) {
+export function WordCard({ word, learn, uiLang, big = false, showPinyin = false, audioLang = learn }: { word: Word; learn: Lang; uiLang: Lang; big?: boolean; showPinyin?: boolean; audioLang?: Lang }) {
   const t = makeT(uiLang)
   return (
     <div className={`wordcard ${big ? 'big' : ''}`}>
@@ -42,7 +42,7 @@ export function WordCard({ word, learn, uiLang, big = false, showPinyin = false 
           : <Chinese word={word} showPinyin={showPinyin} className="word-trans" />}
         {word.kind !== 'word' && <div className="word-kind">{t(word.kind === 'rude' ? 'rude' : 'phrase')}</div>}
       </div>
-      <button className="btn-sound" onClick={() => playWord(word, learn)} aria-label={t('listen')}>
+      <button className="btn-sound" onClick={() => playWord(word, audioLang)} aria-label={t('listen')}>
         <Volume2 size={big ? 28 : 20} />
         {big && <span>{t('listen')}</span>}
       </button>
