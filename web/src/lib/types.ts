@@ -13,4 +13,4 @@ export type State = {
   now: string
 }
 
-export type HistoryItem = { round_id: string; learner: PersonId; deliver_at: string; chosen_by: string; word: Word }
+export type HistoryItem = { round_id: string; learner: PersonId; deliver_at: string; chosen_by: string; word: Word; in_review?: boolean }

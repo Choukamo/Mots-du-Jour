@@ -104,3 +104,5 @@ main { flex: 1; padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
 .review-end .how { text-align: left; margin-top: 16px; }
 .tab-icon { position: relative; display: inline-flex; }
 .badge { position: absolute; top: -6px; right: -12px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; font-style: normal; display: flex; align-items: center; justify-content: center; }
+.add-review { align-self: flex-start; padding: 8px 12px; font-size: 13px; color: var(--muted); }
+.add-review.on { border-color: var(--ok); background: var(--ok-soft); color: var(--ok); }
